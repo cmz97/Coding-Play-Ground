@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>My First Webpage</title>
+		<style>
+			#myCanvas{
+				border: 1px #000 solid;
+				background: #f4f4f4;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<h1> Welcome (h1)</h1>
+		<h2> Welcome (h1)</h2>
+		<br>
+		<h1> Paragraph (h1)</h1>
+		<p> This is a paragraph </p>
+		<p> This is <strong>another</strong> paragraph</p>
+		
+		<br>
+		<h1>Links</h1>
+		<a title = "Google Website" href = "Google.com"> Link to google</a>
+		<br>
+		<h1>Image</h1>
+		<img src = "http://lorempixel.com/400/200">
+		
+		<br>
+		<h1>Unordered List</h1>
+		<ul>
+			<li>Item1</li>
+			<li>Item2</li>
+			<li>Item3</li>
+			<li>Item4</li>
+			<li>Item5</li>
+		</ul>
+		
+		<br>
+		<h1>Ordered List</h1>
+		<ol>
+			<li>Item1</li>
+			<li>Item2</li>
+			<li>Item3</li>
+			<li>Item4</li>
+			<li>Item5</li>
+		</ol>
+		
+		<br>
+		<h1>Description List</h1>
+		<dl>
+			<dt>Coffe</dt>
+			<dd>Black Hot Drink</dd>
+		</dl>
+		<br>
+		<h1>Tables</h1>
+		<table>
+			<thead>
+				<tr align = "left">
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>John Doe</td>
+					<td>JDoe@gmail.com</td>
+					<td>555-555-5555</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<br>
+		<h1>Form and Input</h1>
+		<form action = "POST" action = "index.php">
+			<fieldset>
+			<legend> Account </legend>
+			<label>Name</label><br>
+			<input type = "text" name = "name" required>
+			<br><br>
+			<label>Email</label><br>
+			<input type = "email" name = "email">
+			<br><br>
+			<label>Passwords</label><br>
+			<input type = "password" name = "email">
+			<br><br>
+			</fieldset>
+			<fieldset>
+			<legend> User Input </legend>
+			<label>Location</label><br>
+			<select name = "location">
+				<option value = "MA">MA</option>
+				<option value = "IN">IN</option>
+				<option value = "NY">NY</option>
+				<option value = "CA">CA</option>
+				<option value = "SC" selected>SC</option>
+			</select>
+			
+			<br><br>
+			<label>Gender</label><br>
+			<input type = "radio" name = "Gender" value = "male">Male
+			<input type = "radio" name = "Gender" value = "female" checked>Female
+			<br><br>
+			
+			<label>Interests</label><br>
+			<input type = "checkbox" name = "interests" value = "Movies">Movies
+			<input type = "checkbox" name = "interests" value = "Music" checked>Music
+			<input type = "checkbox" name = "interests" value = "Art" checked>Art
+			<input type = "checkbox" name = "interests" value = "Sports" checked>Sports
+			<br><br>
+			</fieldset>
+			<input type = "submit" value = "submit">
+		</form>
+		<br>
+		<video id="myvideo" src="https://v2v.cc/~j/theora_testsuite/320x240.ogg" controls>Your browser does not support video</video>
+
+		<h1>Audio</h1>
+		<audio id = "myaudio" src="http://www.freesound.org/data/previews/95/95026_57789-lq.mp3">Your browser does not suport audio</audio>
+
+		<div>
+			<button onClick="document.getElementById('myaudio').play()">Play</button>
+			<button onClick="document.getElementById('myaudio').pause()">Pause</button>
+			<button onClick="document.getElementById('myaudio').volume+=0.1()">Volume+</button>
+			<button onClick="document.getElementById('myaudio').volume-=0.1()">Volume-</button>
+		</div>
+
+		<script>
+			var v = document.getElementById('myvideo');
+			v.play;
+		</script>
+
+		<h1>Canvas</h1>
+		<canvas id="myCanvas" width="300" height="300"></canvas>
+
+		<script>
+			var c = document.getElementById('myCanvas')
+			var ctx = c.getContext('2d');
+
+			//rectagle
+//				ctx.fillStyle = 'red';
+//				ctx.fillRect(75,75,150,150);
+
+			//line
+//				ctx.moveTo(0,0);
+//				ctx.lineTo(250,250);
+//				ctx.stroke
+
+			//circle	
+			ctx.beginPath();
+			ctx.arc(150,150,60,0,2*Math.PI);
+			ctx.fillStyle = 'green';
+			ctx.fill();
+			ctx.lineWidth = 4;
+			ctx.strokeStyle = 'red';
+			ctx.stroke();
+
+			//Text
+
+//				ctx.font = '50px Arial';
+//				ctx.strokeStyle = 'red';
+//				ctx.strokeText('Hello World',20,150)
+
+			//Gradient
+//				var grd = ctx.createLinearGradient(0,0,100,0);
+//				grd.addColorStop(0,'blue');
+//				grd.addColorStop(0,'white');
+//				ctx.fillStyle = grd;
+//				ctx.fillRect(50,50,50,50)
+		</script>
+		
+		<h1>SVG</h1>
+		<svg width="300" height="300">
+			<circle cx="100" cy="100" r="80" stroke="red" stroke-width="4" fill="green"/>
+		</svg>
+		<h1>Webstorage</h1>
+		<script>
+			//Store an item
+			localStorage.setItem('name','john Doe');
+			
+			//get it back
+			console.log(localStorage.getItem('name'));
+			
+			//remove item
+			localStorage.removeItem('name');
+		</script>
+		
+		<h1>Markdown</h1>
+		<script>$Parsedown = new Parsedown();
+
+				echo $Parsedown->text('Hello _Parsedown_!'); # prints: <p>Hello <em>Parsedown</em>!</p>
+				// you can also parse inline markdown only
+				echo $Parsedown->line('Hello _Parsedown_!'); # prints: Hello <em>Parsedown</em>!
+		</script>
+	</body>
+</html>
